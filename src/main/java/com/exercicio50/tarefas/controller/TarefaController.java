@@ -5,12 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller // Indica que esta classe é um controlador Spring
-@RequestMapping("/tarefas")
 public class TarefaController {
     //Apresenta em memória a lista armazenada das tarefas
     private final List<Tarefa> tarefaList = new ArrayList<>();
@@ -41,7 +42,6 @@ public class TarefaController {
     public String mostrarListaTarefas(Model model) {
         // Adicionar a lista de tarefas ao modelo
         model.addAttribute("tarefas", tarefaList);
-
         return "lista_tarefas"; //nome do ficheiro html
     }
 }
