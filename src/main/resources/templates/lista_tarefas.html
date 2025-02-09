@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/lista_tarefas.css">
+    <title>Lista de Utilizadores</title>
+</head>
+<body>
+<h1>Lista de Tarefas</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+    </tr>
+    <tr th:each="tarefa : ${tarefas}">
+        <td><span th:text="${tarefa.id}"></span></td>
+        <td><span th:text="${tarefa.nome}"></span></td>
+    </tr>
+    <tr th:if="${tarefas.isEmpty()}">
+        <td colspan="2">Nenhuma tarefa foi adicionada ainda.</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -5,6 +5,9 @@ public class Tarefa {
     private String titulo;
 
     //Construtor
+    public Tarefa(){}
+
+    //Construtor
     public Tarefa(long id, String titulo) {
         this.id = id;
         this.titulo = titulo;
